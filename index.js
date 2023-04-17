@@ -1,10 +1,12 @@
 const express = require("express");
 const db = require("./config/moongose");
+const User = require("./models/user");
 
 const PORT = 8080;
 
 const app = express();
 
+app.use(express.urlencoded());
 app.use("/", require("./routes"));
 app.use(express.static("assets"));
 
