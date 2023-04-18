@@ -9,8 +9,8 @@ const app = express();
 
 app.use(express.urlencoded());
 app.use(expressLayouts);
-app.use("/", require("./routes"));
 app.use(express.static("assets"));
+app.use("/", require("./routes"));
 
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
