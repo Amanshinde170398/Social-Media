@@ -1,1 +1,26 @@
-<h1>signed up</h1>
+<h3><center>sign up</center></h3>
+
+<form action="/create-user" method="post">
+  <div class="form-group">
+    <label for="name"> Name </label>
+    <input name="name" id="name" class="form-control" type="text" />
+  </div>
+  <div class="form-group">
+    <label for="email"> Email </label>
+    <input name="email" id="email" class="form-control" type="email" />
+  </div>
+  <div class="form-group">
+    <label for="password"> Password </label>
+    <input name="password" id="password" class="form-control" type="password" />
+  </div>
+  <div class="form-group">
+    <label for="confirm-password"> Confirm Password </label>
+    <input
+      name="confirm-password"
+      id="confirm-password"
+      class="form-control"
+      type="text"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">sign-up</button>
+</form>

@@ -3,6 +3,7 @@ const express = require("express");
 const db = require("./config/moongose");
 const User = require("./models/user");
 const expressLayouts = require("express-ejs-layouts");
+const cookieParser = require("cookie-parser");
 const PORT = 8080;
 
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.urlencoded());
 app.use(expressLayouts);
 app.use(express.static("assets"));
+app.use(cookieParser());
 app.use("/", require("./routes"));
 
 app.set("layout extractStyles", true);
