@@ -22,7 +22,11 @@ module.exports.createUser = async (req, res) => {
   }
 };
 
+module.exports.userProfile = async (req, res) => {
+  return res.render("user/profile");
+};
+
 module.exports.createSession = async (req, res) => {
-  console.log(req.cookies);
-  res.redirect("back");
+  // console.log(req.cookies);
+  return res.redirect("/user-profile");
 };
