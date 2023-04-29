@@ -1,10 +1,16 @@
 const User = require("../models/user");
 
 module.exports.home = function (req, res) {
+  if (req.isAuthenticated()) {
+    res.redirect("/user-profile");
+  }
   return res.render("user/sign_up");
 };
 
 module.exports.signIn = function (req, res) {
+  if (req.isAuthenticated()) {
+    res.redirect("/user-profile");
+  }
   return res.render("user/sign_in");
 };
 
@@ -29,4 +35,9 @@ module.exports.userProfile = async (req, res) => {
 module.exports.createSession = async (req, res) => {
   // console.log(req.cookies);
   return res.redirect("/user-profile");
+};
+
+module.exports.destroySession = (req, res) => {
+  req.logout((err) => {});
+  res.redirect("/sign-in");
 };
